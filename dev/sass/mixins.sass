@@ -1,0 +1,15 @@
+@mixin flex($direction : row,$wrap: wrap, $justify : center, $align : center)
+    display: flex
+    flex-flow: $direction $wrap
+    justify-content: $justify
+    align-items: $align
+
+
+@mixin centerContent()
+    @include flex()
+
+
+@mixin responsiveGrid($breakWidth : 20rem , $rowHight: 10rem)
+    display: grid
+    grid-template-columns: repeat(auto-fit,minmax(min(100%,$breakWidth),1fr))
+    grid-auto-rows: $rowHight
